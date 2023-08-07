@@ -1,0 +1,237 @@
+@import url(reset.css);
+
+body{
+  font-family: "돋음",dotum,sans-serif;
+  font-size: 12px;
+  color: #333;
+}
+a{
+  color: #666;
+  text-decoration: none;
+}
+/* container */
+#container{}
+#container > div {
+  width: 100%;
+  height: 100vh;
+  font-size: 100px;
+  color: #fff;
+}
+#container > div:first-child{background-color: rgb(221, 180, 126);}
+#container > div:nth-of-type(2){background-color: green;}
+#container > div:nth-of-type(3){background-color: blue;}
+#container > div:nth-of-type(4){background-color: rgb(189, 116, 211);}
+
+/* section */
+#container > div > section{
+  position: relative;
+  width: 100%;
+  height: 100% ;
+  overflow: hidden;
+}
+#container > div > section>span{
+  display: block;
+  text-align: left;
+}
+/* content1 */
+/* 요소들의 최종 위치 css로 잡아주기 */
+#content1 >section > h2{
+  position: absolute;
+  left: 0;
+  top: 50px;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1s ease 0.5s;
+}
+#content1 >section > span:nth-of-type(1){
+  position: absolute;
+  left: 0;
+  top: 150px;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1.5s ease 0.5s;
+}
+#content1 >section > span:nth-of-type(2){
+  position: absolute;
+  left: 0;
+  top: 250px;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 2s ease 0.5s;
+}
+#content1 >section > span:nth-of-type(3){
+  position: absolute;
+  left: 0;
+  top: 350px;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 2.5s ease 0.5s;
+}
+/* section에 on이 붙었을 때  */
+#content1 >section.on > h2{
+  opacity: 1; transform: translateY(0);
+}
+#content1 >section.on >span:nth-of-type(1) {
+  opacity: 1; transform: translateY(0);
+}
+#content1 >section.on >span:nth-of-type(2) {
+  opacity: 1; transform: translateY(0);
+}
+#content1 >section.on >span:nth-of-type(3) {
+  opacity: 1; transform: translateY(0);
+}
+
+/* content2 - 왼쪽에서 날아오게 */
+#content2 >section > h2 {
+  position: absolute;
+  left: 0;
+  top: 50px;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1s ease 0.5s;
+}
+#content2 >section > span:nth-of-type(1){
+  position: absolute;
+  left: 100px;
+  top: 150px;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1.5s ease 0.5s;
+}
+#content2 >section > span:nth-of-type(2){
+  position: absolute;
+  left: 200px;
+  top: 250px;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 2s ease 0.5s;
+}
+#content2 >section > span:nth-of-type(3){
+  position: absolute;
+  left: 300px;
+  top: 350px;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 2.5s ease 0.5s;
+}
+#content2 >section.on > h2 {
+  opacity: 1;transform: translateX(0);
+}
+#content2 >section.on > span:nth-of-type(1) {
+  opacity: 1;transform: translateX(0);
+}
+#content2 >section.on > span:nth-of-type(2) {
+  opacity: 1;transform: translateX(0);
+}
+#content2 >section.on > span:nth-of-type(3) {
+  opacity: 1;transform: translateX(0);
+}
+/* content3 - 양쪽에서 날아오게 */
+#content3 >section > h2{
+  position: absolute;
+  left: 0;
+  top: 50px;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1s ease 0.5s;
+}
+#content3 >section > span:nth-of-type(1){
+  position: absolute;
+  right: 100px;
+  top: 150px;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1.5s ease 0.5s;
+}
+#content3 >section > span:nth-of-type(2){
+  position: absolute;
+  right: 100px;
+  top: 250px;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 2s ease 0.5s;
+}
+#content3 >section > span:nth-of-type(3){
+  position: absolute;
+  left: 100px;
+  top: 350px;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 2.5s ease 0.5s;
+}
+#content3 >section.on >h2 {
+  opacity: 1;transform: translateX(0);
+}
+#content3 >section.on >  span:nth-of-type(1) {
+  opacity: 1;transform: translateX(0);
+}
+#content3 >section.on >  span:nth-of-type(2) {
+  opacity: 1;transform: translateX(0);
+}
+#content3 >section.on >  span:nth-of-type(3) {
+  opacity: 1;transform: translateX(0);
+}
+/* content4 -위에서 아래로 날아오게  */
+#content4 >section > h2{
+  position: absolute;
+  left: 0;
+  top: 50px;
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: all 1s ease 0.5s;
+}
+#content4 >section > span:nth-of-type(1){
+  position: absolute;
+  left: 0;
+  top: 150px;
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: all 1.5s ease 0.5s;
+}
+#content4 >section > span:nth-of-type(2){
+  position: absolute;
+  left: 0;
+  top: 250px;
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: all 2s ease 0.5s;
+}
+#content4 >section > span:nth-of-type(3){
+  position: absolute;
+  left: 0;
+  top: 350px;
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: all 2.5s ease 0.5s;
+}
+#content4 >section.on > h2{
+  opacity: 1; transform: translateY(0);
+}
+#content4 >section.on > span:nth-of-type(1){
+  opacity: 1; transform: translateY(0);
+}
+#content4 >section.on > span:nth-of-type(2){
+  opacity: 1; transform: translateY(0);
+}
+#content4 >section.on > span:nth-of-type(3){
+  opacity: 1; transform: translateY(0);
+}
+/* quickMenu  */
+.quick {position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 150px;
+  background-color: #fff;
+}
+.quick >li > a{
+  display: block;
+  padding:8px 0;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+.quick >li a:hover, .quick >li a:focus{background-color: #eee; color: #000;}
+.quick >li.on a{
+  background-color: #666;
+  color: #fff;
+}
