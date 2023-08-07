@@ -515,6 +515,9 @@ ul.myskills span.colored{
 #container > div#publishing{
   background-color: #ECE7E3;
 }
+#container > div#publishing>section{
+  position: relative;
+}
 /* 뒷배경 */
 #publishing .cont_inner{
   display: flex;
@@ -649,13 +652,11 @@ ul.pagination>li.on{
 
 /* verification*/
 div.verification{
-  position:fixed;
+  position:absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
   left: 0;
-  right: 0;
-  bottom: 0;
   top: 0;
   width: 100%;
   height: 100%;
