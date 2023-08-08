@@ -26,6 +26,8 @@ emailBtn.addEventListener("mouseout", e => {
 })
 
 
+
+
 // 첫 스크롤시 메인페이지에 그라디언트 효과 추가
 const btmGradient = document.querySelector(".btm_gradient"); 
 
@@ -186,7 +188,7 @@ for(let k = 0; k<contents.length;k++){
         slideNum--;
         console.log(slideNum);
         if(slideNum < 0){
-          slideNum == 0;
+          slideNum = 0;
           let prev = e.currentTarget.previousElementSibling.offsetTop;
           scrollTo(prev);
         }

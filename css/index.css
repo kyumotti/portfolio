@@ -190,6 +190,7 @@ div.top_link > a:nth-of-type(2)::after{
 div.top_link > a:nth-of-type(2).on::after{
   left: 0;
 }
+div.top_link> a.ham_btn{display: none;}
 
 /* 그라디언트 레이어 */
 div.btm_gradient{
@@ -347,23 +348,56 @@ div.btm_gradient{
   text-align: center;
   z-index: 10;
 }
+.title_container>p{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 8px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 500;
+}
+.title_container>p>span:first-child{
+  text-shadow: 1px 1px 2px #1A5368;
+  opacity: 0;
+  animation: fadeIn 0.4s linear 6.2s both, slideUp 0.4s linear 5.8s both;
+}
+.title_container>p>span.line{
+  width: 350px;
+  height: 2px;
+  background-color: #fff;
+  /* margin-left: 20px; */
+  text-indent: -9999px;
+  animation: lineani 0.4s linear 6.6s both;
+  transform-origin: left;
+}
+@keyframes lineani {
+  0%{transform: scaleX(0);}
+  100%{transform: scaleX(1);}
+}
+.title_container>p>span:last-child{
+  text-shadow: 1px 1px 2px #1A5368;
+  opacity: 0;
+  animation: fadeIn 0.4s linear 7s both, slideUp 0.4s linear 7s both;
+}
+
 .title_container > h2{
   font-family: valky;
-  /* font-size: 110px; */
-  font-size: 5.729vw;
+  font-size: 110px;
+  /* font-size: 5.729vw; */
   color: #145973;
   white-space: nowrap;
   opacity: 0;
   animation: fadeIn 1.2s linear 5s both, slideUp 0.8s linear 5s both;
 }
 /* 물방울  */
-#main div.bubble{
+/* #main div.bubble{
   position: absolute;
   z-index: 11;
   width: 14.063vw;
   min-width: 190px;
   opacity: 0;
-  /* width: 270px;  */
 }
 #main div.bubble>span{
   position: absolute;
@@ -372,7 +406,6 @@ div.btm_gradient{
   transform: translate(-50%, -50%);
   text-align: center;
   font-weight: 600;
-  /* font-size: 1.458vw; */
   font-size: 22px;
   letter-spacing: -0.05em;
   color: #135B77;
@@ -393,8 +426,7 @@ div.b3{
   left: 66.563vw;
   top: 21.296vh;
   animation: fadeIn 0.3s linear 6.6s both, slideUp 0.3s linear 6.6s both;
-}
-
+} */
 
 /* 프로필 */
 #container > div#profile{
@@ -515,7 +547,7 @@ ul.myskills span.colored{
 #container > div#publishing{
   background-color: #ECE7E3;
 }
-#container > div#publishing>section{
+#container > div#publishing>section {
   position: relative;
 }
 /* 뒷배경 */
@@ -657,6 +689,8 @@ div.verification{
   flex-direction: column;
   justify-content: center;
   left: 0;
+  /* right: 0;
+  bottom: 0; */
   top: 0;
   width: 100%;
   height: 100%;
