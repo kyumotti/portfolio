@@ -191,6 +191,10 @@ for(let k = 0; k<contents.length;k++){
           slideNum = 0;
           let prev = e.currentTarget.previousElementSibling.offsetTop;
           scrollTo(prev);
+          quickMenu.forEach(menu => {
+            menu.classList.remove("on")
+          })
+          quickMenu[k-1].classList.add("on")
         }
         slider.style.transform = `translateX(${-slideNum*slideW}px)`;
         roll.forEach(item => {
@@ -203,6 +207,10 @@ for(let k = 0; k<contents.length;k++){
           slideNum = 2;
           let next = e.currentTarget.nextElementSibling.offsetTop;
           scrollTo(next);
+          quickMenu.forEach(menu => {
+            menu.classList.remove("on")
+          })
+          quickMenu[k+1].classList.add("on")
         }
         slider.style.transform = `translateX(${-slideNum*slideW}px)`;
         roll.forEach(item => {
@@ -217,7 +225,7 @@ for(let k = 0; k<contents.length;k++){
           quickMenu.forEach(menu => {
            menu.classList.remove("on")
          })
-         quickMenu[k+1].classList.add("on")
+         quickMenu[k-1].classList.add("on")
 
       } else if(e.deltaY>0){ //wheel down
         let next = e.currentTarget.nextElementSibling.offsetTop;
@@ -287,12 +295,47 @@ const publishing = document.querySelector("#publishing");
 veriBtn.addEventListener("click", e=>{
   e.preventDefault();
   verification.classList.add("on")
-  body.classList.add("on")
+  // body.classList.add("on")
   // publishing.classList.add("on")
 })
 backIcon.addEventListener("click", e=>{
   e.preventDefault();
   verification.classList.remove("on")
-  body.classList.remove("on")
+  // body.classList.remove("on")
   // publishing.classList.remove("on")
 })
+
+const tabMenu = document.querySelectorAll("ul.tabMenu>li");
+const htmlimg = document.querySelector(".veri_result > li.html")
+const css = document.querySelector(".veri_result > li.css")
+const access = document.querySelector(".veri_result > li.access")
+const all = document.querySelectorAll(".veri_result > li")
+
+for(let i = 0; i < tabMenu.length; i++){
+  tabMenu[i].addEventListener("click", (e)=> {
+    tabMenu.forEach(item => {
+      item.classList.remove("on")
+    })
+    e.currentTarget.classList.add("on")
+    all.forEach(item => {
+      item.style.display = "none"
+    })
+    let className = e.currentTarget.getAttribute("class"); 
+    switch(className) {
+      case "html on":
+        htmlimg.style.display = "block"
+        break;
+  
+      case "css on":
+        css.style.display = "block"
+        break;
+  
+      case "access on": 
+        access.style.display = "block"
+        break;
+      
+      default:
+        break;
+    }
+})
+}
