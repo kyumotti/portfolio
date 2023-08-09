@@ -16,8 +16,8 @@ window.addEventListener("load", ()=> {
   scrollTo(0)
 })
 
-const emailBtn = document.querySelector(".top_link > a:nth-child(2)");
 // email me hover 이벤트
+const emailBtn = document.querySelector(".top_link > a:nth-child(2)");
 emailBtn.addEventListener("mouseover", e => {
   e.currentTarget.classList.add("on")
 })
@@ -25,8 +25,58 @@ emailBtn.addEventListener("mouseout", e => {
   e.currentTarget.classList.remove("on")
 })
 
+// 햄버거 gnb메뉴
+// 헴버거 메뉴 아이콘 클릭시 gnb가 나오고 현재 섹션은 작아지기
+const slideBG = document.querySelector("div.slide_bg");
+const slideGnb = document.querySelector("ul.slide_gnb");
+const slideGnbLi = document.querySelectorAll("ul.slide_gnb>li.menuLi");
+console.log(typeof slideGnbLi)
+console.log(slideGnbLi);
+const hamBtn = document.querySelector("a.ham_btn");
+const container = document.querySelector("#container")
+
+  hamBtn.addEventListener("click", e => {
+    e.preventDefault();
+    slideBG.classList.add("open")
+    slideGnb.classList.add("open")
+    hamCloseBtn.classList.add("open")
+    body.classList.add("on")
+    // container.classList.add("open")
+    contents.forEach(item => {
+      item.classList.add("open")
+    })
+})
 
 
+// 햄버거 닫기 버튼 클릭 이벤트 
+const hamCloseBtn = document.querySelector("a.ham_close_btn"); 
+hamCloseBtn.addEventListener("click", (e)=> {
+  slideBG.classList.remove("open")
+  slideGnb.classList.remove("open")
+  hamCloseBtn.classList.remove("open")
+  body.classList.remove("on")
+  // container.classList.remove("open")
+  contents.forEach(item => {
+    item.classList.remove("open")
+  })
+})
+
+// 햄버거 메뉴 li클릭시 해당하는 섹션으로 이동
+for(let i=0; i<slideGnbLi.length; i++){
+  slideGnbLi[i].addEventListener("click",e=> {
+    e.preventDefault();
+    slideBG.classList.remove("open")
+    slideGnb.classList.remove("open")
+    hamCloseBtn.classList.remove("open")
+    body.classList.remove("on")
+    // container.classList.remove("open")
+    contents.forEach(item => {
+      item.classList.remove("open")
+    })
+    scrollTo(i*devHeight); 
+
+  })
+}
 
 // 첫 스크롤시 메인페이지에 그라디언트 효과 추가
 const btmGradient = document.querySelector(".btm_gradient"); 
@@ -225,7 +275,7 @@ for(let k = 0; k<contents.length;k++){
           quickMenu.forEach(menu => {
            menu.classList.remove("on")
          })
-         quickMenu[k-1].classList.add("on")
+         quickMenu[k-1].classList.add("on");
 
       } else if(e.deltaY>0){ //wheel down
         let next = e.currentTarget.nextElementSibling.offsetTop;

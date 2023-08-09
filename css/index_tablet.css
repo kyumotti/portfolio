@@ -66,6 +66,121 @@ div.loader > img{
   position: relative;
   width: 100%;
 } */
+
+/* 햄버거 메뉴 */
+div.slide_bg{
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+div.slide_bg.open{
+  background-color: #fff;
+  opacity: 1;
+  width: 100vw;
+  height: 100vh;
+  z-index: 51;
+}
+ul.slide_gnb{ 
+  display: none;
+}
+ul.slide_gnb.open{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  background-color: transparent;
+  font-family: MabryPro-medium;
+  font-size: 5.67vw;
+  position:fixed;
+  min-width: 360px;
+  right: 0;
+  top: 0;
+  height: 100%;
+  padding-right: 5.208vw;
+  z-index: 52;
+  border: 1px solid red;
+}
+ul.slide_gnb.open>li>a{
+  position: relative;
+}
+ul.slide_gnb.open>li>a::after{
+  content:"";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 3px;
+  background-color: #4CA9F8;
+  transform: scale(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(.15,.2,.1,1);
+}
+ul.slide_gnb.open>li:hover>a::after{
+  transform:scale(1);
+}
+ul.slide_gnb.open>li:last-child>a::after{
+  display: none;
+}
+ul.slide_gnb>li:last-child >a{
+  text-indent: -9999px;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+}
+ul.slide_gnb>li:last-child >a:first-of-type{
+  background: url(../images/github_black.svg) no-repeat;
+  margin-right: 24px;
+}
+ul.slide_gnb>li:last-child >a:last-of-type{
+  background: url(../images/email_black.svg) no-repeat;
+}
+
+/* 햄버거 닫기 버튼 */
+a.ham_close_btn{
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 50vw;
+  /* right: 0; */
+  transform: translateY(-50%) ;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  text-indent: -9999px;
+  overflow: hidden;
+  background: url(../images/ham_close_btn.svg) no-repeat;
+  z-index: 55;
+  box-shadow: 0 16px 44px rgba(0,0,0,.3);
+}
+a.ham_close_btn.open{
+  display: block;
+}
+
+/* 각 섹션에 .open이 붙으면 섹션 크기가 작아짐 */
+#container>div.open{
+  height: 100vh;
+  transition: transform .8s cubic-bezier(.15,.2,.1,1);
+  transform: scale(.835) translateX(-466px) translateZ(0);
+  position: relative;
+  transform-origin: center;
+  overflow: hidden;
+  z-index: 53;
+}
+/* #container > div.open::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50vh;
+  transform: translate(50%,-50%);
+  width: 50px;
+  height: 50px;
+  background: url(../images/ham_close_btn.svg) no-repeat;
+  background-size: cover;
+  z-index: 53;
+  cursor: pointer;
+} */
+
 /* header */
 #header{
   position: fixed;
@@ -82,7 +197,7 @@ div.loader > img{
   margin-top: 24px;
   border: 1px solid red;
   font-family: MabryPro-medium;
-  z-index: 97;
+  z-index: 50;
 }
 #header > h1{
   min-width: 100px;
@@ -126,6 +241,7 @@ div.btm_gradient{
 #container > div {
   width: 100%;
   height: 100vh;
+  transition: transform .8s cubic-bezier(.15,.2,.1,1);
 }
 .cont_inner{
   position: relative;
@@ -816,13 +932,16 @@ div.veri_container>p{
   padding: 12px;
 }
 .popupBG > .popup_container>.pop_img{
+  width: 100%;
   height: 85%;
-  overflow-y: scroll;
-  border: 1px solid #fff;
+  /* overflow-y: scroll; */
 }
 .popupBG > .popup_container>.pop_img>img{
-  height: 100%;
+  width: 100%;
+  /* height: 100%;
+  object-fit: contain; */
 }
+
 /* contact */
 div#contact{
   background: #ECE7E3;
@@ -890,7 +1009,7 @@ div#contact{
 }
 .contactme > p {
   font-family: MabryPro-medium;
-  font-size: 5.625rem;
+  font-size: 66px;
 }
 .contactme > ul{
   display: flex;

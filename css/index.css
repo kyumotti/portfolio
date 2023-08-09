@@ -16,19 +16,18 @@
 /* noto sans KR */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap');
 
-
 body{
   font-size: 16px;
   color: #333;
   font-family: 'Noto Sans KR', sans-serif;
 }
-body.on{
+/* body.on{
   position: fixed;
   left: 0;
   right: 0;
   width: 100%;
   height: 100%;
-}
+} */
 a{
   color: #333;
   text-decoration: none;
@@ -66,6 +65,11 @@ div.loader > img{
   position: relative;
   width: 100%;
 } */
+
+/* 햄버거 메뉴 */
+ul.slide_gnb{display: none;}
+.slide_bg{display: none;}
+a.ham_close_btn{display: none;}
 /* header */
 #header{
   position: fixed;
@@ -80,7 +84,6 @@ div.loader > img{
   align-items: center;
   padding: 0 1.667vw;
   margin-top: 38px;
-  border: 1px solid red;
   font-family: MabryPro-medium;
   z-index: 97;
 }
@@ -221,7 +224,6 @@ div.btm_gradient{
   width: 1400px;
   height: 100%;
   margin:0 auto;
-  border: 1px solid red;
 }
 /* section */
 #container > div > section{
@@ -356,7 +358,8 @@ div.btm_gradient{
   margin-bottom: 8px;
   color: #fff;
   font-size: 22px;
-  font-weight: 500;
+  font-family: 'NanumSquare',sans-serif;
+  font-weight: 700;
 }
 .title_container>p>span:first-child{
   text-shadow: 1px 1px 2px #1A5368;
@@ -576,7 +579,6 @@ ul.myskills span.colored{
   width: calc(100%/3);
   display: flex;
   align-items: center;
-  border: 1px solid green;
   /* justify-content: space-between; */
 }
 div.mockup{
@@ -831,6 +833,7 @@ div.veri_container>p{
 
 #design .cont_inner{
   display: flex;
+  width: 72.917vw;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -880,6 +883,7 @@ div.veri_container>p{
   top: 120px;
   transform: translateX(-50%);
   max-width: 750px;
+  /* width: 90%; */
   height: calc(100vh - 120px);
   display: flex;
   flex-flow: column nowrap;
@@ -902,12 +906,14 @@ div.veri_container>p{
   padding: 12px;
 }
 .popupBG > .popup_container>.pop_img{
+  width: 100%;
   height: 85%;
-  overflow-y: scroll;
-  border: 1px solid #fff;
+  /* overflow-y: scroll; */
 }
 .popupBG > .popup_container>.pop_img>img{
+  width: 100%;
   height: 100%;
+  object-fit: contain;
 }
 /* contact */
 div#contact{
