@@ -12,7 +12,7 @@ window.addEventListener("load", ()=> {
     setTimeout(()=> {
       loader.style.display = "none";
     },400)
-  },2000);
+  },1500);
   scrollTo(0)
 })
 
