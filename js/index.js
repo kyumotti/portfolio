@@ -30,36 +30,37 @@ emailBtn.addEventListener("mouseout", e => {
 const slideBG = document.querySelector("div.slide_bg");
 const slideGnb = document.querySelector("ul.slide_gnb");
 const slideGnbLi = document.querySelectorAll("ul.slide_gnb>li.menuLi");
-console.log(typeof slideGnbLi)
-console.log(slideGnbLi);
 const hamBtn = document.querySelector("a.ham_btn");
 const container = document.querySelector("#container")
+const hamCloseBtn = document.querySelector("a.ham_close_btn"); 
 
   hamBtn.addEventListener("click", e => {
-    e.preventDefault();
-    slideBG.classList.add("open")
-    slideGnb.classList.add("open")
-    hamCloseBtn.classList.add("open")
-    body.classList.add("on")
-    // container.classList.add("open")
-    contents.forEach(item => {
-      item.classList.add("open")
-    })
+    for(let i = 0; i<contents.length; i++){
+      e.preventDefault();
+      slideBG.classList.add("open")
+      slideGnb.classList.add("open")
+      hamCloseBtn.classList.add("open")
+      if(scrollY >= i*devHeight-5 && scrollY < (i+1)*devHeight){
+        console.log(scrollY)
+        console.log(devHeight)
+        contents.forEach(item => {
+          item.classList.remove("open")
+        })
+        contents[i].classList.add("open")
+        // body.classList.add("on")
+      }
+      hamCloseBtn.addEventListener("click", (e)=> {
+        e.preventDefault();
+        slideBG.classList.remove("open");
+        slideGnb.classList.remove("open");
+        hamCloseBtn.classList.remove("open");
+        contents[i].classList.remove("open");
+        // body.classList.remove("on")
+      })
+
+    }
 })
 
-
-// 햄버거 닫기 버튼 클릭 이벤트 
-const hamCloseBtn = document.querySelector("a.ham_close_btn"); 
-hamCloseBtn.addEventListener("click", (e)=> {
-  slideBG.classList.remove("open")
-  slideGnb.classList.remove("open")
-  hamCloseBtn.classList.remove("open")
-  body.classList.remove("on")
-  // container.classList.remove("open")
-  contents.forEach(item => {
-    item.classList.remove("open")
-  })
-})
 
 // 햄버거 메뉴 li클릭시 해당하는 섹션으로 이동
 for(let i=0; i<slideGnbLi.length; i++){
@@ -68,13 +69,43 @@ for(let i=0; i<slideGnbLi.length; i++){
     slideBG.classList.remove("open")
     slideGnb.classList.remove("open")
     hamCloseBtn.classList.remove("open")
-    body.classList.remove("on")
-    // container.classList.remove("open")
     contents.forEach(item => {
       item.classList.remove("open")
     })
     scrollTo(i*devHeight); 
+    
+    if(e.currentTarget == slideGnbLi[1]){
+      bgText1.classList.add("on")
+      bgText2.classList.add("on")
+      designBG.classList.remove("on")
+      transBG.classList.remove("on")
+      bgcircleS.classList.remove("on")
+      bgcircleM.classList.remove("on")
+      bgcircleL.classList.remove("on")
+    }else{
+      bgText1.classList.remove("on")
+      bgText2.classList.remove("on")
+      if(e.currentTarget == slideGnbLi[3]){
+        designBG.classList.add("on")
+        transBG.classList.add("on")
+        bgcircleS.classList.remove("on")
+        bgcircleM.classList.remove("on")
+        bgcircleL.classList.remove("on")
+      }else{
+        designBG.classList.remove("on")
+        transBG.classList.remove("on")
+        if(e.currentTarget == slideGnbLi[4]){
+          bgcircleS.classList.add("on")
+          bgcircleM.classList.add("on")
+          bgcircleL.classList.add("on")
+        }else{
+          bgcircleS.classList.remove("on")
+          bgcircleM.classList.remove("on")
+          bgcircleL.classList.remove("on")
+        }
+      }
 
+    }
   })
 }
 
@@ -151,6 +182,7 @@ for(let i=0; i<quickMenu.length;i++){
       bgText1.classList.add("on")
       bgText2.classList.add("on")
       designBG.classList.remove("on")
+      transBG.classList.remove("on")
       bgcircleS.classList.remove("on")
       bgcircleM.classList.remove("on")
       bgcircleL.classList.remove("on")
@@ -159,11 +191,13 @@ for(let i=0; i<quickMenu.length;i++){
       bgText2.classList.remove("on")
       if(e.currentTarget == quickMenu[3]){
         designBG.classList.add("on")
+        transBG.classList.add("on")
         bgcircleS.classList.remove("on")
         bgcircleM.classList.remove("on")
         bgcircleL.classList.remove("on")
       }else{
         designBG.classList.remove("on")
+        transBG.classList.remove("on")
         if(e.currentTarget == quickMenu[4]){
           bgcircleS.classList.add("on")
           bgcircleM.classList.add("on")
@@ -185,6 +219,7 @@ const designBG = document.querySelector("#design .designBG")
 const bgcircleS = document.querySelector(".bgcircle_s")
 const bgcircleM = document.querySelector(".bgcircle_m")
 const bgcircleL = document.querySelector(".bgcircle_l")
+const transBG = document.querySelector(".transBG")
 
 for(let k = 0; k<contents.length;k++){
   contents[k].addEventListener("wheel", e => {
@@ -193,6 +228,7 @@ for(let k = 0; k<contents.length;k++){
         bgText1.classList.add("on")
         bgText2.classList.add("on")
         designBG.classList.add("on")
+        transBG.classList.add("on")
         bgcircleS.classList.remove("on")
         bgcircleM.classList.remove("on")
         bgcircleL.classList.remove("on")
@@ -200,6 +236,7 @@ for(let k = 0; k<contents.length;k++){
         bgText1.classList.remove("on")
         bgText2.classList.remove("on")
         designBG.classList.remove("on")
+        transBG.classList.remove("on")
       }
     }else if(e.deltaY>0){ //wheel down
       if(e.currentTarget == contents[0]){
@@ -211,8 +248,10 @@ for(let k = 0; k<contents.length;k++){
         bgText2.classList.remove("on")
         if(e.currentTarget == contents[2]){
           designBG.classList.add("on")
+          transBG.classList.add("on")
         }else{
           designBG.classList.remove("on")
+          transBG.classList.remove("on")
           if(e.currentTarget == contents[3]){
             bgcircleS.classList.add("on")
             bgcircleM.classList.add("on")
@@ -228,7 +267,7 @@ for(let k = 0; k<contents.length;k++){
   })
 }
 
-// content에서 마우스휠로 하나하나 넘어갈때마다 해당 컨텐츠 위치로 스크롤바 이동
+// 마우스 휠 이벤트
 // 3번째 content에서는 가로스크롤
 // 가로 스크롤이 끝나면 다시 세로 스크롤
 for(let k = 0; k<contents.length;k++){
@@ -323,20 +362,21 @@ for(let i = 0; i<roll.length; i++){
 }
 
 // design 섹션 팝업창
-const popwork1 = document.querySelector(".pop1");
-const popupBG = document.querySelector(".popupBG");
-const popCloseBtn = document.querySelector(".pop_close_btn");
+// const popwork1 = document.querySelector(".pop1");
+// const popupBG = document.querySelector(".popupBG");
+// const popCloseBtn = document.querySelector(".pop_close_btn");
 
-popwork1.addEventListener("click", e=> {
-  popupBG.classList.add("on")
-})
-popCloseBtn.addEventListener("click", e=> {
-  e.preventDefault();
-  popupBG.classList.remove("on")
-})
+// popwork1.addEventListener("click", e=> {
+//   popupBG.classList.add("on")
+// })
+// popCloseBtn.addEventListener("click", e=> {
+//   e.preventDefault();
+//   popupBG.classList.remove("on")
+// })
 
 // 웹접근성 결과 페이지
 const veriBtn = document.querySelector(".veri_btn");
+console.log(veriBtn)
 const verification = document.querySelector(".verification");
 const backIcon = document.querySelector(".back_ico");
 const body = document.querySelector("body");
@@ -355,6 +395,7 @@ backIcon.addEventListener("click", e=>{
   // publishing.classList.remove("on")
 })
 
+// 웹접근성 결과 페이지 내 탭메뉴
 const tabMenu = document.querySelectorAll("ul.tabMenu>li");
 const htmlimg = document.querySelector(".veri_result > li.html")
 const css = document.querySelector(".veri_result > li.css")

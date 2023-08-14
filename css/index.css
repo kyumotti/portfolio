@@ -34,7 +34,9 @@ a{
 }
 
 @media (min-width:1025px){
-
+html{
+  font-size: 16px;
+}
 /* loader */
 div.loader{
   position: fixed;
@@ -152,6 +154,8 @@ div.top_link > a:nth-of-type(1){
   display: block;
   width: 48px;
   height: 48px;
+  overflow: hidden;
+  text-indent: -9999px;
   background: url(../images/github.svg) no-repeat;
   transition: background-image 0.4s;
   margin-right: 7px;
@@ -265,7 +269,7 @@ div.btm_gradient{
   background-size: cover;
 }
 #main .mountainBG.ani_on{
-  animation: fadeIn 0.2s linear 3.2s both, slideUp 0.2s linear 3.2s both;
+  animation: fadeIn 0.2s cubic-bezier(0.41,0.27,0.56,1.23) 3.2s both, slideUp 0.2s cubic-bezier(0.41,0.27,0.56,1.23) 3.2s both;
 }
 #main .fieldBG{
   position:absolute;
@@ -280,7 +284,7 @@ div.btm_gradient{
   background-size: cover;
 }
 #main .fieldBG.ani_on{
-  animation: fadeIn 0.2s linear 3.4s both, slideUp 0.2s linear 3.4s both;
+  animation: fadeIn 0.2s cubic-bezier(0.41,0.27,0.56,1.23) 3.4s both, slideUp 0.2s cubic-bezier(0.41,0.27,0.56,1.23) 3.4s both;
 }
 #main .sunflowerBG1{
   position:absolute;
@@ -295,7 +299,7 @@ div.btm_gradient{
   background-size: cover;
 }
 #main .sunflowerBG1.ani_on{
-  animation: fadeIn 0.2s linear 3.6s both, slideUp 0.2s linear 3.6s both;
+  animation: fadeIn 0.2s cubic-bezier(0.41,0.27,0.56,1.23) 3.6s both, cubic-bezier(0.41,0.27,0.56,1.23) 0.2s linear 3.6s both;
 }
 #main .sunflowerBG2{
   position:absolute;
@@ -310,7 +314,7 @@ div.btm_gradient{
   background-size: cover;
 }
 #main .sunflowerBG2.ani_on{
-  animation: fadeIn 0.2s linear 3.8s both, slideUp 0.2s linear 3.8s both;
+  animation: fadeIn 0.2s linear 3.8s both, slideUp 0.2s cubic-bezier(0.41,0.27,0.56,1.23) 3.8s both;
 }
 
 #main .sunBG{
@@ -325,7 +329,7 @@ div.btm_gradient{
   background-size: cover;
 }
 #main .sunBG.ani_on{
-  animation: itemMoveY 1s linear 4s both;
+  animation: itemMoveY 1s cubic-bezier(.25,.75,.5,1.25) 4s both;
 }
 
 @keyframes itemMoveY{ 
@@ -345,7 +349,9 @@ div.btm_gradient{
 #main > section >.title_container{ 
   position: absolute;
   left: 50%;
-  top: 40%;
+  top: 38%;
+  /* width: 900px; */
+
   transform: translate(-50%,-50%);
   text-align: center;
   z-index: 10;
@@ -364,7 +370,7 @@ div.btm_gradient{
 .title_container>p>span:first-child{
   text-shadow: 1px 1px 2px #1A5368;
   opacity: 0;
-  animation: fadeIn 0.4s linear 6.2s both, slideUp 0.4s linear 5.8s both;
+  animation: fadeIn 0.4s linear 14.6s both, slideUp 0.4s linear 14.6s both;
 }
 .title_container>p>span.line{
   width: 350px;
@@ -372,7 +378,7 @@ div.btm_gradient{
   background-color: #fff;
   /* margin-left: 20px; */
   text-indent: -9999px;
-  animation: lineani 0.4s linear 6.6s both;
+  animation: lineani 0.4s linear 15s both;
   transform-origin: left;
 }
 @keyframes lineani {
@@ -382,55 +388,62 @@ div.btm_gradient{
 .title_container>p>span:last-child{
   text-shadow: 1px 1px 2px #1A5368;
   opacity: 0;
-  animation: fadeIn 0.4s linear 7s both, slideUp 0.4s linear 7s both;
+  animation: fadeIn 0.4s linear 15.4s both, slideUp 0.4s linear 15.4s both;
 }
 
-.title_container > h2{
+/* .title_container > h2{
   font-family: valky;
   font-size: 110px;
-  /* font-size: 5.729vw; */
   color: #145973;
   text-shadow:  1px 1px 2px #fff;
   white-space: nowrap;
   opacity: 0;
   animation: fadeIn 1.2s linear 5s both, slideUp 0.8s linear 5s both;
-}
-/* 물방울  */
-/* #main div.bubble{
-  position: absolute;
-  z-index: 11;
-  width: 14.063vw;
-  min-width: 190px;
-  opacity: 0;
-}
-#main div.bubble>span{
-  position: absolute;
-  left: 50%;
-  top: 52%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  font-weight: 600;
-  font-size: 22px;
-  letter-spacing: -0.05em;
-  color: #135B77;
-  white-space: nowrap;
-}
-
-div.b1{
-  left: 18.833vw;
-  top: 25.322vh;
-  animation: fadeIn 0.3s linear 6s both, slideUp 0.3s linear 6s both;
-}
-div.b2{
-  left: 60.698vw;
-  top: 9.852vh;
-  animation: fadeIn 0.3s linear 6.3s both, slideUp 0.3s linear 6.3s both;
-}
-div.b3{
-  left: 66.563vw;
-  top: 21.296vh;
-  animation: fadeIn 0.3s linear 6.6s both, slideUp 0.3s linear 6.6s both;
 } */
+div.textbox{
+  opacity: 0;
+  animation: fadeIn 1.2s linear 5s both;
+  border: 1px solid blue;
+  /* width: 70vw; */
+}
+svg{
+  display: block;
+  width:900px;
+  height:230px;
+  /* width: 100%; */
+  border: 1px solid red;}
+
+svg text {
+        font-family: valky;
+        /* font-size: 5.729vw; */
+        font-size: 110px;
+        fill:transparent;
+        text-shadow:  1px 1px 2px #fff;
+        stroke-dasharray: 326px;
+        animation: stroke 0.4s linear;
+        animation-fill-mode: forwards;
+        animation-delay: calc(5s + 0.4s * var(--i));
+    }
+    @keyframes stroke {
+        0%   {
+            stroke:#145973;
+            stroke-width: 3px;
+            stroke-dashoffset: 326px;
+        }
+        70% {
+            fill: transparent;
+        }
+        98% {
+            stroke:#145973;
+            stroke-width: 3px;
+        }
+        100% {
+            fill: #145973;
+            stroke-dashoffset: 0px;
+        }
+    }
+
+
 
 /* 프로필 */
 #container > div#profile{
@@ -521,7 +534,7 @@ ul.myskills span.colored{
   letter-spacing: -0.03em;
   white-space: nowrap;
 }
-#profile span.text1.on {
+#profile>section.on span.text1 {
   animation: textaniLeft 2.2s ease 0.3s both;
 }
 @keyframes textaniLeft {
@@ -529,7 +542,7 @@ ul.myskills span.colored{
   100%{transform:rotate(-23deg) translate(-110%,0)}
 }
 
-#profile span.text2.on {
+#profile>section.on span.text2 {
   animation: textaniRight 2.2s ease 0.3s both;
 }
 @keyframes textaniRight {
@@ -563,12 +576,33 @@ ul.myskills span.colored{
   /* background-position: center; */
   background-size:80% ;
   overflow: hidden;
+  border: 1px solid red;
 }
 #publishing .cont_inner> h2{
   font-family: MabryPro-medium;
   font-size:70px;
-  margin-bottom: 4.167vh;
+  margin-bottom: 3.167vh;
 }
+
+.waviy>span{
+  position: relative;
+  display: inline-block;
+  animation: waivy 2s infinite ease-in-out;
+  animation-delay: calc(0.2s * var(--i));
+}
+
+.waviy2>span{
+  position: relative;
+  display: inline-block;
+  animation: waivy 2s infinite ease-in-out;
+  animation-delay: calc(0.2s * var(--k));
+}
+
+@keyframes waivy {
+  0%,40%,100%{transform: translateY(0);}
+  20%{transform:translateY(-20px);}
+}
+
 /* 프로젝트 가로 스크롤 기차 */
 #publishing .page3_inner{
   display: flex;
@@ -592,8 +626,10 @@ div.work_detail{
 }
 div.work_detail>h3{
   font-family: MabryPro-regular;
-  font-size: 2.865vw;
-  margin-bottom: 0.417vw;
+  line-height: 1.2;
+  /* font-size: 2.865vw; */
+  font-size: 54px;
+  margin-bottom:  24px;
   letter-spacing: -0.01em;
 }
 div.work_detail > dl>dt{
@@ -617,8 +653,9 @@ div.work_detail > dl>dt::after{
 div.work_detail > dl>dd{
   font-weight: 400;
   font-size: 18px;
+  line-height: 1.5;
   letter-spacing: -0.02em;
-  margin-bottom: 1.250vw;
+  margin-bottom: 32px;
 }
 
 div.work_detail > dl:nth-of-type(2) ul {
@@ -626,11 +663,11 @@ div.work_detail > dl:nth-of-type(2) ul {
   list-style-position:inside
 }
 /* 해쉬태그 */
-div.work_detail > ul.hashtag{
+ul.hashtag{
   display: flex;
   flex-wrap: wrap;
 }
-div.work_detail > ul.hashtag>li{
+ul.hashtag>li{
   padding: 5px 14px ;
   background-color: #fff;
   color: #4CA9F8;
@@ -643,14 +680,13 @@ div.work_detail > ul.hashtag>li{
 }
 div.work_detail >ul.viewmore{
   display: flex;
-
 }
-div.work_detail >ul.viewmore>li{
+ul.viewmore>li{
   background-color: #B2D9FA;
   border-radius: 50px;
   margin-right: 0.833vw;
 }
-div.work_detail >ul.viewmore>li>a{
+ul.viewmore>li>a{
   font-family:  MabryPro-medium;
   padding: 10px 2.500vw;
   display: block;
@@ -659,7 +695,7 @@ div.work_detail >ul.viewmore>li>a{
   line-height: 30px;
   white-space: nowrap;
 }
-div.work_detail >ul.viewmore>li:hover>a{
+ul.viewmore>li:hover>a{
   background-color: #4CA9F8;
   color: #fff;
 }
@@ -667,9 +703,9 @@ div.work_detail >ul.viewmore>li:hover>a{
 
 /* pagination */
 ul.pagination {
-  display: flex;
-  margin: 0 auto;
-  margin-top: 3.125vw;
+display: flex;
+margin: 0 auto;
+margin-top: 3.125vw;
 }
 ul.pagination>li{
   text-indent: -9999px;
@@ -749,13 +785,20 @@ div.verification >div.veri_container{
   width: 72.917vw;
   height: 54.630vh;
   margin: 0 auto;
+  /* padding: 50px 190px; */
   border-radius: 100px;
   background: url(../images/blurBG.png) no-repeat center center;
   background-size: cover;
 }
 ul.veri_result {
-  width: 70%;
+  width: 75%;
+  /* min-width: 633px; */
+  /* width: 1024px; */
+  /* width: 53.333vw; */
+  /* margin: 0 auto; */
+  /* height: 38.519vh; */
   max-width: 833px;
+  border: 1px solid red;
 }
 ul.veri_result>li{
   width: 100%;
@@ -764,14 +807,16 @@ ul.veri_result>li{
 ul.veri_result>li.on{
   display: block;
 }
+
 ul.veri_result img{
   display: block;
-  width: 100%;
+  /* max-width: 100%; */
 }
 div.veri_container>p{
-  width: 70%;
+  width: 75%;
   text-align: center;
   font-size: 1rem;
+  margin: 0 auto;
   letter-spacing: -0.02em;
 }
 
@@ -780,7 +825,6 @@ div.veri_container>p{
   position: relative;
   background-color: #ECE7E3;
 }
-
 .designBG{
   position: absolute;
   left: 50%;
@@ -800,8 +844,7 @@ div.veri_container>p{
   width: max(200vw,200vh);
   height: max(200vw,200vh);
 }
-
-.designBG::after{
+/* .designBG::after{
   content: "";
   display: block;
   position: absolute;
@@ -817,34 +860,82 @@ div.veri_container>p{
 @keyframes bgani {
   10%{transform: translate(-50%, -50%) scale(1,1);}
   100%{transform: translate(-50%, -50%) scale(3,0.2);}
-}
-
-
-/* 배경 애니메이션 */
-/* #design .designBG{
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 76vw;
-  height: 100vh;
-  margin: 0 auto;
-  animation: bgani 2s ease both;
-  background-color: #ffffff71;
 } */
 
 #design .cont_inner{
   display: flex;
   width: 72.917vw;
+  /* max-width: 1400px; */
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 }
+
 #design h2{
   font-family: MabryPro-medium;
   font-size:70px;
   margin-bottom: 4.167vh;
 }
-#design .cont_inner > ul {
+div.transBG{
+  position: relative;
+  /* max-width:1024px; */
+  width: 100%;
+  height: 70vh;
+  background-color: #ffffff71;
+  /* background: #ffffff71 url(../images/app_mockup.png) no-repeat right bottom; */
+  border-top-left-radius: 78px;
+  border-top-right-radius: 78px;
+  padding: 5vh;
+  background-size: 70%;
+  transform: translateY(10%);
+  opacity: 0;
+  transition: all 0.7s cubic-bezier(.25,.75,.5,1.25) 0.7s;
+}
+div.transBG.on{
+  transform: translateY(0);
+  opacity: 1;
+}
+div.transBG>h3{
+  font-family: MabryPro-regular;
+  font-size: 3.125vw;
+  letter-spacing: -0.02rem;
+  text-align: center;
+  margin-bottom: 8px;
+}
+div.transBG>p{
+  font-size: 20px;
+  letter-spacing: -0.02rem;
+  text-align: center;
+}
+
+ .design_detail{
+  width: 50%;
+}
+div.design_detail>dl>dt{
+  font-family: MabryPro-regular;
+  font-size: 24px;
+  line-height: 36px;
+  margin-top: 4.630vh;
+  margin-bottom: 1.222vh;
+}
+div.design_detail>dl>dd{
+  font-size: 16px;
+  line-height: 24px;
+}
+.design_detail> ul.hashtag{
+  margin-top: 16px;
+}
+.design_detail>ul.viewmore{
+  width: 70%;
+  text-align: center;
+}
+div.app_mockup{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 40vw;
+  min-width: 500px;
+}
+/* #design .cont_inner > ul {
   display: flex;
   column-gap: 70px;
 }
@@ -862,10 +953,10 @@ div.veri_container>p{
 #design .cont_inner > ul > li:hover >img{
   filter: grayscale(0) contrast(1);
   transform:scale(1.03);
-}
+} */
 
 /* 팝업창 */
-#design .popupBG{
+/* #design .popupBG{
   position: fixed;
   left: 0;
   top: 0;
@@ -884,7 +975,6 @@ div.veri_container>p{
   top: 120px;
   transform: translateX(-50%);
   max-width: 750px;
-  /* width: 90%; */
   height: calc(100vh - 120px);
   display: flex;
   flex-flow: column nowrap;
@@ -909,13 +999,13 @@ div.veri_container>p{
 .popupBG > .popup_container>.pop_img{
   width: 100%;
   height: 85%;
-  /* overflow-y: scroll; */
 }
 .popupBG > .popup_container>.pop_img>img{
   width: 100%;
   height: 100%;
   object-fit: contain;
-}
+} */
+
 /* contact */
 div#contact{
   background: #ECE7E3;
