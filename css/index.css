@@ -403,7 +403,6 @@ div.btm_gradient{
 div.textbox{
   opacity: 0;
   animation: fadeIn 1.2s linear 5s both;
-  border: 1px solid blue;
   /* width: 70vw; */
 }
 svg{
@@ -411,8 +410,8 @@ svg{
   width:900px;
   height:230px;
   /* width: 100%; */
-  border: 1px solid red;}
-
+}
+svg text.mob{display: none;}
 svg text {
         font-family: valky;
         /* font-size: 5.729vw; */

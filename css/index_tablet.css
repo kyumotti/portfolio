@@ -396,14 +396,14 @@ div.btm_gradient{
 .title_container>p>span:first-child{
   text-shadow: 1px 1px 2px #1A5368;
   opacity: 0;
-  animation: fadeIn 0.4s linear 6.2s both, slideUp 0.4s linear 5.8s both;
+  animation: fadeIn 0.4s linear 14.6s both, slideUp 0.4s linear 14.6s both;
 }
 .title_container>p>span.line{
   width: 250px;
   height: 2px;
   background-color: #fff;
   text-indent: -9999px;
-  animation: lineani 0.4s linear 6.6s both;
+  animation: lineani 0.4s linear 15s both;
   transform-origin: left;
 }
 @keyframes lineani {
@@ -413,7 +413,7 @@ div.btm_gradient{
 .title_container>p>span:last-child{
   text-shadow: 1px 1px 2px #1A5368;
   opacity: 0;
-  animation: fadeIn 0.4s linear 7s both, slideUp 0.4s linear 7s both;
+  animation: fadeIn 0.4s linear 15.4s both, slideUp 0.4s linear 15.4s both;
 }
 
 /* .title_container > h2{
@@ -430,13 +430,13 @@ div.textbox{
   opacity: 0;
   animation: fadeIn 1.2s linear 5s both;
 }
-
+svg text.mob{display: none;}
 svg{
   display: block;
   width: 700px;
   /* width: 100%; */
   height:230px;
-  border: 1px solid red;}
+}
 
 svg text {
         font-family: valky;
