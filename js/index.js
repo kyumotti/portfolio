@@ -177,102 +177,117 @@ for(let i=0; i<quickMenu.length;i++){
       menu.classList.remove("on")
     })
     quickMenu[i].classList.add("on");
-
-    if(e.currentTarget == quickMenu[1]){
-      bgText1.classList.add("on")
-      bgText2.classList.add("on")
-      designBG.classList.remove("on")
-      transBG.classList.remove("on")
-      bgcircleS.classList.remove("on")
-      bgcircleM.classList.remove("on")
-      bgcircleL.classList.remove("on")
-    }else{
-      bgText1.classList.remove("on")
-      bgText2.classList.remove("on")
-      if(e.currentTarget == quickMenu[3]){
-        designBG.classList.add("on")
-        transBG.classList.add("on")
-        bgcircleS.classList.remove("on")
-        bgcircleM.classList.remove("on")
-        bgcircleL.classList.remove("on")
-      }else{
-        designBG.classList.remove("on")
-        transBG.classList.remove("on")
-        if(e.currentTarget == quickMenu[4]){
-          bgcircleS.classList.add("on")
-          bgcircleM.classList.add("on")
-          bgcircleL.classList.add("on")
-        }else{
-          bgcircleS.classList.remove("on")
-          bgcircleM.classList.remove("on")
-          bgcircleL.classList.remove("on")
-        }
-      }
-      
-    }
+      for (let v= 0; v < sections.length; v++) {
+        if(i*devHeight >= v*devHeight && i*devHeight < (v+1)*devHeight) {
+          sections.forEach(item => {
+            item.classList.remove("on")
+          })
+          sections[v].classList.add("on")
+      }}
+    // if(e.currentTarget == quickMenu[1]){
+    //   bgText1.classList.add("on")
+    //   bgText2.classList.add("on")
+    //   designBG.classList.remove("on")
+    //   transBG.classList.remove("on")
+    //   bgcircleS.classList.remove("on")
+    //   bgcircleM.classList.remove("on")
+    //   bgcircleL.classList.remove("on")
+    // }else{
+    //   bgText1.classList.remove("on")
+    //   bgText2.classList.remove("on")
+    //   if(e.currentTarget == quickMenu[3]){
+    //     designBG.classList.add("on")
+    //     transBG.classList.add("on")
+    //     bgcircleS.classList.remove("on")
+    //     bgcircleM.classList.remove("on")
+    //     bgcircleL.classList.remove("on")
+    //   }else{
+    //     designBG.classList.remove("on")
+    //     transBG.classList.remove("on")
+    //     if(e.currentTarget == quickMenu[4]){
+    //       bgcircleS.classList.add("on")
+    //       bgcircleM.classList.add("on")
+    //       bgcircleL.classList.add("on")
+    //     }else{
+    //       bgcircleS.classList.remove("on")
+    //       bgcircleM.classList.remove("on")
+    //       bgcircleL.classList.remove("on")
+    //     }
+    //   }
+    // }
   })
 }
 
-const bgText1 = document.querySelector("#profile .text1")
-const bgText2 = document.querySelector("#profile .text2")
-const designBG = document.querySelector("#design .designBG")
-const bgcircleS = document.querySelector(".bgcircle_s")
-const bgcircleM = document.querySelector(".bgcircle_m")
-const bgcircleL = document.querySelector(".bgcircle_l")
-const transBG = document.querySelector(".transBG")
+// const bgText1 = document.querySelector("#profile .text1")
+// const bgText2 = document.querySelector("#profile .text2")
+// const designBG = document.querySelector("#design .designBG")
+// const bgcircleS = document.querySelector(".bgcircle_s")
+// const bgcircleM = document.querySelector(".bgcircle_m")
+// const bgcircleL = document.querySelector(".bgcircle_l")
+// const transBG = document.querySelector(".transBG")
 
-for(let k = 0; k<contents.length;k++){
-  contents[k].addEventListener("wheel", e => {
-    if(e.deltaY< 0){ // wheel up 
-      if(e.currentTarget == contents[2]||e.currentTarget == contents[4]){
-        bgText1.classList.add("on")
-        bgText2.classList.add("on")
-        designBG.classList.add("on")
-        transBG.classList.add("on")
-        bgcircleS.classList.remove("on")
-        bgcircleM.classList.remove("on")
-        bgcircleL.classList.remove("on")
-      }else {
-        bgText1.classList.remove("on")
-        bgText2.classList.remove("on")
-        designBG.classList.remove("on")
-        transBG.classList.remove("on")
-      }
-    }else if(e.deltaY>0){ //wheel down
-      if(e.currentTarget == contents[0]){
-        bgText1.classList.add("on")
-        bgText2.classList.add("on")
+// for(let k = 0; k<contents.length;k++){
+//   contents[k].addEventListener("wheel", e => {
+//     if(e.deltaY< 0){ // wheel up 
+//       if(e.currentTarget == contents[2]||e.currentTarget == contents[4]){
+//         bgText1.classList.add("on")
+//         bgText2.classList.add("on")
+//         designBG.classList.add("on")
+//         transBG.classList.add("on")
+//         bgcircleS.classList.remove("on")
+//         bgcircleM.classList.remove("on")
+//         bgcircleL.classList.remove("on")
+//       }else {
+//         bgText1.classList.remove("on")
+//         bgText2.classList.remove("on")
+//         designBG.classList.remove("on")
+//         transBG.classList.remove("on")
+//       }
+//     }else if(e.deltaY>0){ //wheel down
+//       if(e.currentTarget == contents[0]){
+//         bgText1.classList.add("on")
+//         bgText2.classList.add("on")
 
-      }else{
-        bgText1.classList.remove("on")
-        bgText2.classList.remove("on")
-        if(e.currentTarget == contents[2]){
-          designBG.classList.add("on")
-          transBG.classList.add("on")
-        }else{
-          designBG.classList.remove("on")
-          transBG.classList.remove("on")
-          if(e.currentTarget == contents[3]){
-            bgcircleS.classList.add("on")
-            bgcircleM.classList.add("on")
-            bgcircleL.classList.add("on")
-          }else{
-            bgcircleS.classList.remove("on")
-            bgcircleM.classList.remove("on")
-            bgcircleL.classList.remove("on")
-          }
-        }
-      }
-    }
-  })
-}
+//       }else{
+//         bgText1.classList.remove("on")
+//         bgText2.classList.remove("on")
+//         if(e.currentTarget == contents[2]){
+//           designBG.classList.add("on")
+//           transBG.classList.add("on")
+//         }else{
+//           designBG.classList.remove("on")
+//           transBG.classList.remove("on")
+//           if(e.currentTarget == contents[3]){
+//             bgcircleS.classList.add("on")
+//             bgcircleM.classList.add("on")
+//             bgcircleL.classList.add("on")
+//           }else{
+//             bgcircleS.classList.remove("on")
+//             bgcircleM.classList.remove("on")
+//             bgcircleL.classList.remove("on")
+//           }
+//         }
+//       }
+//     }
+//   })
+// }
+const contInner = document.querySelector("#publishing .cont_inner")
+const contentTop = contInner.getBoundingClientRect().top + window.scrollY;
 
+// window.addEventListener("scroll", ()=> {
+//   if(window.scrollY >= contentTop){
+//     publishing.classList.add("fixed")
+//   }else{
+//     publishing.classList.remove("fixed")
+//   }
+// })
 // 마우스 휠 이벤트
 // 3번째 content에서는 가로스크롤
 // 가로 스크롤이 끝나면 다시 세로 스크롤
 for(let k = 0; k<contents.length;k++){
   contents[k].addEventListener("wheel", e=> {
-    if(e.currentTarget == contents[2]) {
+    if(e.currentTarget == contents[2] && window.scrollY >= contentTop) {
+      publishing.classList.add("fixed")
       if(e.deltaY<0){ //wheel up
         slideNum--;
         console.log(slideNum);
@@ -284,6 +299,7 @@ for(let k = 0; k<contents.length;k++){
             menu.classList.remove("on")
           })
           quickMenu[k-1].classList.add("on")
+          sections[1].classList.add("on")
         }
         slider.style.transform = `translateX(${-slideNum*slideW}px)`;
         roll.forEach(item => {
@@ -300,6 +316,7 @@ for(let k = 0; k<contents.length;k++){
             menu.classList.remove("on")
           })
           quickMenu[k+1].classList.add("on")
+          sections[3].classList.add("on")
         }
         slider.style.transform = `translateX(${-slideNum*slideW}px)`;
         roll.forEach(item => {
@@ -308,6 +325,7 @@ for(let k = 0; k<contents.length;k++){
         roll[slideNum].classList.add("on")
       }
     }else{
+      publishing.classList.remove("fixed")
       if(e.deltaY<0){ // wheel up 
         let prev = e.currentTarget.previousElementSibling.offsetTop;
         scrollTo(prev)
@@ -315,7 +333,14 @@ for(let k = 0; k<contents.length;k++){
            menu.classList.remove("on")
          })
          quickMenu[k-1].classList.add("on");
-
+        for (let v= 0; v < sections.length; v++) {
+          if(prev >= v*devHeight && prev < (v+1)*devHeight) {
+            sections.forEach(item => {
+              item.classList.remove("on")
+            })
+            sections[v].classList.add("on")
+          }
+        }
       } else if(e.deltaY>0){ //wheel down
         let next = e.currentTarget.nextElementSibling.offsetTop;
         scrollTo(next)
@@ -323,6 +348,14 @@ for(let k = 0; k<contents.length;k++){
             menu.classList.remove("on")
           })
           quickMenu[k+1].classList.add("on")
+        for (let v= 0; v < sections.length; v++) {
+          if(next >= v*devHeight && next < (v+1)*devHeight) {
+            sections.forEach(item => {
+              item.classList.remove("on")
+            })
+            sections[v].classList.add("on")
+        }
+      }
       }
     }
 
@@ -360,6 +393,8 @@ for(let i = 0; i<roll.length; i++){
     roll[i].classList.add("on")
   })
 }
+
+
 
 // design 섹션 팝업창
 // const popwork1 = document.querySelector(".pop1");

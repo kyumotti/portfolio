@@ -88,7 +88,7 @@ ul.slide_gnb.open{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 16px;
+  gap: 8px;
   background-color: transparent;
   font-family: MabryPro-medium;
   font-size: 5.67vw;
@@ -195,7 +195,7 @@ a.ham_close_btn:hover{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 4.071vw;
+  padding: 0 4.071vw 0 2.071vw;
   margin-top: 1.878vh;
   font-family: MabryPro-medium;
   z-index: 50;
@@ -203,6 +203,7 @@ a.ham_close_btn:hover{
 #header > h1{
   min-width: 100px;
 }
+#header > h1 img{height: 62px;}
 #header>nav{
   display: none;
 }
@@ -395,14 +396,14 @@ div.btm_gradient{
 .title_container>p>span:first-child{
   text-shadow: 1px 1px 2px #1A5368;
   opacity: 0;
-  animation: fadeIn 0.4s linear 6.2s both, slideUp 0.4s linear 5.8s both;
+  animation: fadeIn 0.4s linear 14.6s both, slideUp 0.4s linear 14.6s both;
 }
 .title_container>p>span.line{
   width: 200px;
   height: 2px;
   background-color: #fff;
   text-indent: -9999px;
-  animation: lineani 0.4s linear 6.6s both;
+  animation: lineani 0.4s linear 15s both;
   transform-origin: left;
 }
 @keyframes lineani {
@@ -412,7 +413,7 @@ div.btm_gradient{
 .title_container>p>span:last-child{
   text-shadow: 1px 1px 2px #1A5368;
   opacity: 0;
-  animation: fadeIn 0.4s linear 7s both, slideUp 0.4s linear 7s both;
+  animation: fadeIn 0.4s linear 15.4s both, slideUp 0.4s linear 15.4s both;
 }
 
 /* .title_container > h2{
@@ -428,20 +429,17 @@ div.btm_gradient{
 div.textbox{
   opacity: 0;
   animation: fadeIn 1.2s linear 5s both;
-
 }
 
 svg{
   display: block;
   width: 100%;
-  height:50vh;
+  height:45vh;
 }
 svg text:not(.mob){display: none;}
 svg text {
         font-family: valky;
-        font-size: 70px;
-        /* font-size: 9.959vw; */
-        /* font-size: 5.333rem; */
+        font-size: 60px;
         fill:transparent;
         text-shadow:  1px 1px 2px #fff;
         stroke-dasharray: 326px;
@@ -560,7 +558,7 @@ ul.myskills span.colored{
 #profile span.bgText.text2{
   display: none;
 }
-#profile span.text1.on {
+#profile>section.on span.text1 {
   animation: textaniLeft 2.2s ease 0.3s both;
 }
 @keyframes textaniLeft {
@@ -582,7 +580,7 @@ ul.myskills span.colored{
 #publishing .cont_inner{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   background: url(../images/workBG.png) no-repeat center top;
   background-size:120%;
   overflow: hidden;
@@ -632,8 +630,8 @@ ul.myskills span.colored{
 div.mockup{
   width: 50vw;
   min-width: 285px;
-  margin-bottom: 32px;
-
+  /* margin-bottom: 32px; */
+  margin-bottom: 3.286vh;
 }
 /* div.work_detail{
   width: 60vw;
@@ -851,7 +849,7 @@ div.veri_container>p{
   background: linear-gradient(0deg, rgba(236,231,227,1) 13%, rgba(127,205,237,1) 100%);
   opacity: 0.6;
 }
-.designBG.on{
+#design > section.on .designBG{
   opacity: 1;
   border-radius: 0px;
   width: max(200vw,200vh);
@@ -886,7 +884,7 @@ div.transBG{
   opacity: 0;
   transition: all 0.7s cubic-bezier(.25,.75,.5,1.25) 0.7s;
 }
-div.transBG.on{
+#design > section.on .transBG{
   transform: translateY(0);
   opacity: 1;
 }
@@ -954,13 +952,13 @@ div#contact{
   border-radius: 50%;
   /* transition: transform 0.5s ease-in-out; */
 }
-.bgcircle_s.on{
+#contact > section.on .bgcircle_s{
   animation: circleAni2 5s ease-in-out both;
 }
-.bgcircle_m.on{
+#contact > section.on .bgcircle_m{
   animation: circleAni 2s ease-in-out 0.5s both;
 }
-.bgcircle_l.on{
+#contact > section.on .bgcircle_l{
   animation: circleAni 2s ease-in-out 1s both;
 }
 @keyframes circleAni{
@@ -1016,7 +1014,7 @@ div#contact{
 .contactme > ul>li{
   padding: 5px 14px;
   font-family: MabryPro-regular;
-  font-size: 1.125rem;
+  font-size: 16px;
   background-color: #fff;
   border-radius: 50px;
   border: 1px solid #4CA9F8;
@@ -1024,12 +1022,12 @@ div#contact{
 }
 .contactme > ul>li>a{
   display: block;
-  line-height: 30px;
-  padding-left: 30px;
+  line-height: 24px;
   color: #4CA9F8;
   text-align: center;
 }
 .contactme > ul>li.email > a{
+  padding-left: 30px;
   background: url(../images/eva_email-outline.svg) no-repeat 0 center;
 }
 .contactme > ul>li.email:hover > a{
@@ -1064,13 +1062,14 @@ div#contact{
   z-index: 20;
 }
 #contact>section>address{
-  font-size: 14px;
+  font-size: 12px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   bottom: 10vh;
   color: #A0A0A0;
   z-index: 20;
+  white-space: nowrap;
 }
 
 }

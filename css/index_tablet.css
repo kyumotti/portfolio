@@ -559,7 +559,7 @@ ul.myskills span.colored{
 #profile span.bgText.text2{
   display: none;
 }
-#profile span.text1.on {
+#profile>section.on span.text1 {
   animation: textaniLeft 2.2s ease 0.3s both;
 }
 @keyframes textaniLeft {
@@ -858,7 +858,7 @@ div.veri_container>p{
   background: linear-gradient(0deg, rgba(236,231,227,1) 13%, rgba(127,205,237,1) 100%);
   opacity: 0.6;
 }
-.designBG.on{
+#design > section.on .designBG{
   opacity: 1;
   border-radius: 0px;
   width: max(200vw,200vh);
@@ -892,7 +892,7 @@ div.transBG{
   opacity: 0;
   transition: all 0.7s cubic-bezier(.25,.75,.5,1.25) 0.7s;
 }
-div.transBG.on{
+#design > section.on .transBG{
   transform: translateY(0);
   opacity: 1;
 }
@@ -1009,13 +1009,13 @@ div#contact{
   border-radius: 50%;
   /* transition: transform 0.5s ease-in-out; */
 }
-.bgcircle_s.on{
+#contact > section.on .bgcircle_s{
   animation: circleAni2 5s ease-in-out both;
 }
-.bgcircle_m.on{
+#contact > section.on .bgcircle_m{
   animation: circleAni 2s ease-in-out 0.5s both;
 }
-.bgcircle_l.on{
+#contact > section.on .bgcircle_l{
   animation: circleAni 2s ease-in-out 1s both;
 }
 @keyframes circleAni{
@@ -1070,7 +1070,7 @@ div#contact{
 .contactme > ul>li{
   padding: 5px 14px;
   font-family: MabryPro-regular;
-  font-size: 1.125rem;
+  font-size: 18px;
   background-color: #fff;
   border-radius: 50px;
   border: 1px solid #4CA9F8;

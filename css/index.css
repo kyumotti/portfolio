@@ -563,6 +563,10 @@ ul.myskills span.colored{
 #container > div#publishing{
   background-color: #ECE7E3;
 }
+/* #container > div#publishing.on{
+  position: fixed;
+} */
+
 #container > div#publishing>section {
   position: relative;
 }
@@ -605,6 +609,8 @@ ul.myskills span.colored{
 /* 프로젝트 가로 스크롤 기차 */
 #publishing .page3_inner{
   display: flex;
+  position: sticky;
+  top: 0;
   width: 300%;
   transition: transform 0.5s ease-in-out;
 }
@@ -824,6 +830,12 @@ div.veri_container>p{
   position: relative;
   background-color: #ECE7E3;
 }
+#design > section.on .designBG{
+  opacity: 1;
+  border-radius: 0px;
+  width: max(200vw,200vh);
+  height: max(200vw,200vh);
+}
 .designBG{
   position: absolute;
   left: 50%;
@@ -837,28 +849,11 @@ div.veri_container>p{
   background: linear-gradient(0deg, rgba(236,231,227,1) 13%, rgba(127,205,237,1) 100%);
   opacity: 0.6;
 }
-.designBG.on{
+/* .designBG.on{
   opacity: 1;
   border-radius: 0px;
   width: max(200vw,200vh);
   height: max(200vw,200vh);
-}
-/* .designBG::after{
-  content: "";
-  display: block;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width:25%;
-  height: 100%;
-  z-index: 0;
-  background-color:#ffffff71;
-  animation: bgani 0.3s ease forwards;
-}
-@keyframes bgani {
-  10%{transform: translate(-50%, -50%) scale(1,1);}
-  100%{transform: translate(-50%, -50%) scale(3,0.2);}
 } */
 
 #design .cont_inner{
@@ -889,7 +884,11 @@ div.transBG{
   opacity: 0;
   transition: all 0.7s cubic-bezier(.25,.75,.5,1.25) 0.7s;
 }
-div.transBG.on{
+/* div.transBG.on{
+  transform: translateY(0);
+  opacity: 1;
+} */
+#design > section.on .transBG {
   transform: translateY(0);
   opacity: 1;
 }
@@ -1020,7 +1019,17 @@ div#contact{
   border-radius: 50%;
   /* transition: transform 0.5s ease-in-out; */
 }
-.bgcircle_s.on{
+#contact > section.on .bgcircle_s{
+  animation: circleAni2 5s ease-in-out both;
+}
+#contact > section.on .bgcircle_m{
+  animation: circleAni 2s ease-in-out 0.5s both;
+}
+#contact > section.on .bgcircle_l{
+    animation: circleAni 2s ease-in-out 1s both;
+}
+
+/* .bgcircle_s.on{
   animation: circleAni2 5s ease-in-out both;
 }
 .bgcircle_m.on{
@@ -1028,7 +1037,7 @@ div#contact{
 }
 .bgcircle_l.on{
   animation: circleAni 2s ease-in-out 1s both;
-}
+} */
 @keyframes circleAni{
   0%{transform: translate(-50%, -50%) scale(0);}
   50%{transform:translate(-50%, -50%) scale(1);}
