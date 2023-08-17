@@ -254,7 +254,6 @@ div.btm_gradient{
   width: 700px;
   height: 100%;
   margin:0 auto;
-  border: 1px solid red;
 }
 /* section */
 #container > div > section{
@@ -624,7 +623,6 @@ ul.myskills span.colored{
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid green;
   /* justify-content: center */
 }
 div.mockup{
@@ -835,7 +833,7 @@ ul.veri_result img{
 div.veri_container>p{
   width: 80%;
   text-align: center;
-  font-size: 1rem;
+  font-size: 14px;
   letter-spacing: -0.02em;
 }
 

@@ -563,10 +563,6 @@ ul.myskills span.colored{
 #container > div#publishing{
   background-color: #ECE7E3;
 }
-/* #container > div#publishing.on{
-  position: fixed;
-} */
-
 #container > div#publishing>section {
   position: relative;
 }
@@ -579,7 +575,6 @@ ul.myskills span.colored{
   /* background-position: center; */
   background-size:80% ;
   overflow: hidden;
-  border: 1px solid red;
 }
 #publishing .cont_inner> h2{
   font-family: MabryPro-medium;
@@ -609,8 +604,8 @@ ul.myskills span.colored{
 /* 프로젝트 가로 스크롤 기차 */
 #publishing .page3_inner{
   display: flex;
-  position: sticky;
-  top: 0;
+  /* position: sticky;
+  top: 0; */
   width: 300%;
   transition: transform 0.5s ease-in-out;
 }
@@ -748,7 +743,7 @@ div.verification>h2{
   display: flex;
   align-items: center;
   gap: 40px;
-  font-size: 5rem;
+  font-size: 4.7rem;
   font-family: MabryPro-medium;
   width: 72.917vw;
   margin: 0 auto;
@@ -770,7 +765,7 @@ ul.tabMenu {
   gap: 8px;
   font-family:MabryPro-regular;
   font-size: 20px;
-  margin: 32px auto 16px;
+  margin: 16px auto 16px;
 }
 ul.tabMenu >li{
   line-height: 30px;
@@ -786,24 +781,24 @@ div.verification >div.veri_container{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 40px;
+  gap: 32px;
   width: 72.917vw;
-  height: 54.630vh;
+  height: 60vh;
   margin: 0 auto;
-  /* padding: 50px 190px; */
+  padding: 50px 0;
   border-radius: 100px;
   background: url(../images/blurBG.png) no-repeat center center;
   background-size: cover;
 }
 ul.veri_result {
   width: 75%;
+  /* min-height:200px ; */
+  /* height: 40%; */
   /* min-width: 633px; */
   /* width: 1024px; */
   /* width: 53.333vw; */
   /* margin: 0 auto; */
-  /* height: 38.519vh; */
   max-width: 833px;
-  border: 1px solid red;
 }
 ul.veri_result>li{
   width: 100%;
@@ -815,7 +810,6 @@ ul.veri_result>li.on{
 
 ul.veri_result img{
   display: block;
-  /* max-width: 100%; */
 }
 div.veri_container>p{
   width: 75%;

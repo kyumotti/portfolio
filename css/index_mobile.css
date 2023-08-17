@@ -252,7 +252,6 @@ div.btm_gradient{
   padding: 0 15px;
   height: 100vh;
   margin:0 auto;
-  border: 1px solid red;
 }
 /* section */
 #container > div > section{
@@ -826,7 +825,7 @@ ul.veri_result img{
 div.veri_container>p{
   width: 80%;
   text-align: center;
-  font-size: 1rem;
+  font-size: 14px;
   letter-spacing: -0.02em;
 }
 

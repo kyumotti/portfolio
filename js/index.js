@@ -271,23 +271,16 @@ for(let i=0; i<quickMenu.length;i++){
 //     }
 //   })
 // }
-const contInner = document.querySelector("#publishing .cont_inner")
-const contentTop = contInner.getBoundingClientRect().top + window.scrollY;
+const contInner = document.querySelector("#publishing .page3_inner")
 
-// window.addEventListener("scroll", ()=> {
-//   if(window.scrollY >= contentTop){
-//     publishing.classList.add("fixed")
-//   }else{
-//     publishing.classList.remove("fixed")
-//   }
-// })
+
+
 // 마우스 휠 이벤트
 // 3번째 content에서는 가로스크롤
 // 가로 스크롤이 끝나면 다시 세로 스크롤
 for(let k = 0; k<contents.length;k++){
   contents[k].addEventListener("wheel", e=> {
-    if(e.currentTarget == contents[2] && window.scrollY >= contentTop) {
-      publishing.classList.add("fixed")
+    if(e.currentTarget == contents[2]) {
       if(e.deltaY<0){ //wheel up
         slideNum--;
         console.log(slideNum);
@@ -325,7 +318,6 @@ for(let k = 0; k<contents.length;k++){
         roll[slideNum].classList.add("on")
       }
     }else{
-      publishing.classList.remove("fixed")
       if(e.deltaY<0){ // wheel up 
         let prev = e.currentTarget.previousElementSibling.offsetTop;
         scrollTo(prev)
@@ -361,6 +353,8 @@ for(let k = 0; k<contents.length;k++){
 
   })
 }
+
+
 
 // publishing 섹션에서의 가로 스크롤
 const slider = document.querySelector(".page3_inner");
